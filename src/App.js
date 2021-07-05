@@ -1,18 +1,28 @@
 import { BrowserRouter, Route } from "react-router-dom";
-import Home from "./components/home";
+import Nav from "./shared/Nav";
 
-const A = () => {
-  return <p>escfe</p>;
-};
+import {
+  StreamCreate,
+  StreamList,
+  StreamShow,
+  StreamEdit,
+  StreamDelete,
+} from "./components/Streams";
 
 const App = () => {
   return (
-    <BrowserRouter>
-      <div>
-        <Route path="/" exact component={Home} />
-        <Route path="/a" component={A} />
-      </div>
-    </BrowserRouter>
+    <>
+      <BrowserRouter>
+        <div>
+          <Nav />
+          <Route path="/" exact component={StreamList} />
+          <Route path="/stream/new" exact component={StreamCreate} />
+          <Route path="/stream/edit" exact component={StreamEdit} />
+          <Route path="/stream/delete" exact component={StreamDelete} />
+          <Route path="/stream/show" exact component={StreamShow} />
+        </div>
+      </BrowserRouter>
+    </>
   );
 };
 
