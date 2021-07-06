@@ -19,7 +19,7 @@ const GoogleAuth = () => {
     });
 
   const signedout = () =>
-    toast.error("Logged Out!", {
+    toast.error("Signed Out!", {
       position: "top-right",
       autoClose: 5000,
       hideProgressBar: false,
@@ -55,7 +55,7 @@ const GoogleAuth = () => {
       return (
         <>
           <FiLogOut className="mr-3 mt-1" />
-          <p>Log Out</p>
+          <p>Sign Out</p>
         </>
       );
     } else {
