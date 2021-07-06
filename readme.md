@@ -1,6 +1,6 @@
-# Twitch Clone
+# Streamy
 
-💡 A twitch TV clone that uses RTMP server to implement OBS.
+💡 A video streaming app that uses RTMP server to implement OBS.
 
 ## Installation 🔧
 
