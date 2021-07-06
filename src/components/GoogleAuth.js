@@ -50,7 +50,7 @@ const GoogleAuth = () => {
 
   const _renderAuthBtn = () => {
     if (isSignedIn === null) {
-      return <p>loading ...</p>;
+      return <div class="animate-pulse">Loading...</div>;
     } else if (isSignedIn) {
       return (
         <>
