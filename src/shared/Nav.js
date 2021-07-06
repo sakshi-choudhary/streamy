@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import Logo from "../assets/logo.png";
-import { FcGoogle } from "react-icons/fc";
+import GoogleAuth from "../components/GoogleAuth";
 
 const Nav = () => {
   return (
@@ -8,11 +8,7 @@ const Nav = () => {
       <Link to="/">
         <img src={Logo} alt="logo" className="w-14" />
       </Link>
-      <Link to="/">
-        <div className="flex rounded-md px-5 py-3 mt-1 hover:opacity-75  bg-primarydark text-gray-300  font-medium text-2xl ">
-          <FcGoogle className="mr-3 mt-1" /> <span>Login with Google</span>
-        </div>
-      </Link>
+      <GoogleAuth />
     </div>
   );
 };
