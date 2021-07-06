@@ -3,8 +3,10 @@ import { FcGoogle } from "react-icons/fc";
 import { FiLogOut } from "react-icons/fi";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { signIn, signOut } from "../actions";
+import { connect } from "react-redux";
 
-const GoogleAuth = () => {
+const GoogleAuth = (props) => {
   const [isSignedIn, setIsSignedIn] = useState(null);
 
   const signedin = () =>
@@ -44,8 +46,12 @@ const GoogleAuth = () => {
     });
   }, []);
 
-  const onAuthChange = () => {
-    setIsSignedIn(window.gapi.auth2.getAuthInstance().isSignedIn.get());
+  const onAuthChange = (isSignedIn) => {
+    if (isSignedIn) {
+      props.signIn();
+    } else {
+      props.signOut();
+    }
   };
 
   const _renderAuthBtn = () => {
@@ -102,4 +108,4 @@ const GoogleAuth = () => {
   );
 };
 
-export default GoogleAuth;
+export default connect(null, { signIn, signOut })(GoogleAuth);
